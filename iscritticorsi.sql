@@ -5,13 +5,8 @@
 -- HeidiSQL Versione:            8.0.0.4451
 -- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
 -- Dump della struttura del database iscritticorsi
-CREATE DATABASE IF NOT EXISTS `iscritticorsi` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE IF NOT EXISTS `iscritticorsi` 
 USE `iscritticorsi`;
 
 -- SET SQL_SAFE_UPDATES = 0
@@ -20,14 +15,14 @@ USE `iscritticorsi`;
 CREATE TABLE IF NOT EXISTS `corso` (
   `codins` varchar(50) NOT NULL,
   `crediti` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL, 
   `pd` int(11) NOT NULL,
   PRIMARY KEY (`codins`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dump dei dati della tabella iscritticorsi.corso: ~14 rows (circa)
 DELETE FROM `corso`;
-/*!40000 ALTER TABLE `corso` DISABLE KEYS */;
+
 INSERT INTO `corso` (`codins`, `crediti`, `nome`, `pd`) VALUES
 	('01KSUPG', 8, 'Gestione dell\'innovazione e sviluppo prodotto', 2),
 	('01NATPG', 8, 'Gestione dell\'innovazione e sviluppo prodotto ICT', 2),
@@ -43,7 +38,7 @@ INSERT INTO `corso` (`codins`, `crediti`, `nome`, `pd`) VALUES
 	('09AQGNG', 8, 'Economia aziendale', 1),
 	('09AQGPG', 8, 'Economia aziendale', 1),
 	('10BDAPG', 8, 'Gestione dei progetti', 1);
-/*!40000 ALTER TABLE `corso` ENABLE KEYS */;
+
 
 
 -- Dump della struttura di tabella iscritticorsi.iscrizione
@@ -58,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `iscrizione` (
 
 -- Dump dei dati della tabella iscritticorsi.iscrizione: ~3.120 rows (circa)
 DELETE FROM `iscrizione`;
-/*!40000 ALTER TABLE `iscrizione` DISABLE KEYS */;
+
 INSERT INTO `iscrizione` (`matricola`, `codins`) VALUES
 	(161245, '01KSUPG'),
 	(161334, '01KSUPG'),
@@ -3801,7 +3796,4 @@ INSERT INTO `studente` (`matricola`, `cognome`, `nome`, `CDS`) VALUES
 	(200626, 'BRENA', 'MASSIMILIANO', 'GESZT4'),
 	(200629, 'ZUFFI', 'FRANCESCA', 'GESZT4'),
 	(200630, 'SARTI', 'GIORGIO', 'GESZT4');
-/*!40000 ALTER TABLE `studente` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
